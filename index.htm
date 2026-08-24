@@ -1,0 +1,388 @@
+<!-- Created by ✨Subho`ᥫ᭡ -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Imas Prayoga 🌙</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(circle at 50% 20%, #26345f 0%, #11182f 35%, #070b18 75%);
+      color: white;
+      position: relative;
+    }
+
+    /* Bintang */
+    .stars {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: 0.2;
+        transform: scale(0.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+    }
+
+    /* Bulan */
+    .moon {
+      position: absolute;
+      top: 70px;
+      right: 12%;
+      width: 100px;
+      height: 100px;
+      background: #fff8d8;
+      border-radius: 50%;
+      box-shadow:
+        0 0 30px rgba(255, 248, 216, 0.5),
+        0 0 70px rgba(255, 248, 216, 0.2);
+    }
+
+    .moon::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #101731;
+      border-radius: 50%;
+      left: 30px;
+      top: -10px;
+    }
+
+    /* Card */
+    .card {
+      position: relative;
+      z-index: 2;
+      width: min(90%, 550px);
+      padding: 45px 35px;
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 28px;
+
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+      animation: appear 1.5s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .moon-icon {
+      font-size: 55px;
+      margin-bottom: 15px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .name {
+      color: #ffdca8;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      color: #cbd3ec;
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ffb6c1, #c59cff);
+      color: #171322;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+
+      box-shadow: 0 8px 25px rgba(197, 156, 255, 0.3);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(197, 156, 255, 0.5);
+    }
+
+    .message {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .message.show {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 30px;
+    }
+
+    .message p {
+      color: #f0f2ff;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .signature {
+      margin-top: 20px;
+      color: #ffc5d5 !important;
+      font-style: italic;
+    }
+
+    /* Partikel */
+    .particle {
+      position: absolute;
+      bottom: -20px;
+      font-size: 15px;
+      animation: rise 8s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.8;
+      }
+
+      80% {
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 12px;
+      z-index: 2;
+    }
+
+    /* HP */
+    @media (max-width: 600px) {
+      .moon {
+        width: 70px;
+        height: 70px;
+        top: 45px;
+        right: 10%;
+      }
+
+      .moon::after {
+        width: 70px;
+        height: 70px;
+        left: 22px;
+        top: -7px;
+      }
+
+      .card {
+        padding: 35px 25px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Bintang -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Bulan -->
+  <div class="moon"></div>
+
+  <!-- Pesan utama -->
+  <div class="card">
+
+    <div class="moon-icon">🌙</div>
+
+    <h1>
+      Selamat Tidur,
+      <span class="name">Imas</span>
+    </h1>
+
+    <p class="subtitle">
+      ada sedikit pesan sebelum kamu tidur...
+    </p>
+
+    <button onclick="showMessage()">
+      💌 Buka Pesan
+    </button>
+
+    <div class="message" id="message">
+
+      <p>
+        selamat tidur, imas prayoga 🌙
+        <br><br>
+
+        semoga malam ini kamu bisa istirahat dengan tenang,
+        melepas semua capek dan pikiran yang mungkin hari ini
+        sempat bikin kamu lelah.
+        <br><br>
+
+        jangan lupa istirahat yang cukup ya.
+        besok adalah hari baru, jadi nggak perlu terlalu
+        memikirkan hal-hal yang belum terjadi.
+        <br><br>
+
+        semoga mimpi indah dan bangun dengan perasaan
+        yang lebih baik. ✨
+      </p>
+
+      <p class="signature">
+        good night, imas 🤍
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    made with a little bit of thought 🌙
+  </div>
+
+  <script>
+
+    /* Membuat bintang otomatis */
+    const stars = document.getElementById("stars");
+
+    for (let i = 0; i < 100; i++) {
+
+      const star = document.createElement("div");
+
+      star.classList.add("star");
+
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+
+      const size = Math.random() * 3 + 1;
+
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+
+      star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+      stars.appendChild(star);
+    }
+
+
+    /* Membuat partikel kecil */
+    for (let i = 0; i < 15; i++) {
+
+      const particle = document.createElement("div");
+
+      particle.classList.add("particle");
+
+      particle.innerHTML = "✨";
+
+      particle.style.left =
+        Math.random() * 100 + "%";
+
+      particle.style.animationDelay =
+        Math.random() * 8 + "s";
+
+      particle.style.animationDuration =
+        (6 + Math.random() * 6) + "s";
+
+      document.body.appendChild(particle);
+    }
+
+
+    /* Membuka pesan */
+    function showMessage() {
+
+      const message =
+        document.getElementById("message");
+
+      const button =
+        document.querySelector("button");
+
+      message.classList.toggle("show");
+
+      if (message.classList.contains("show")) {
+
+        button.innerHTML = "🌙 Pesan Dibuka";
+
+      } else {
+
+        button.innerHTML = "💌 Buka Pesan";
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>
